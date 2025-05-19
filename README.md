@@ -29,5 +29,51 @@ My SQL 설치 https://code-angie.tistory.com/158
 3. Ngrok로 외부 연결해서 모두 접속하면서 확인
 4. 이후 회사의 상황에 따라 내부망만 접속 가능하게 설정 -> 이후론 외부에서 접속 불가
 
+###########################################################
+
+# 환경 설정 ( 툴 설치 등 )
+### 맥
+```
+Homebrew : /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+Node.js : brew install node
+Python3 : brew install python@3.11
+MySQL : brew install mysql
+Git : brew install git
+VSCode : https://code.visualstudio.com
+Postman : https://www.postman.com/downloads/
+```
+### 윈도우
+```
+Node.js : https://nodejs.org/
+Python 3.11 : https://www.python.org/downloads/windows/
+MySQL : https://dev.mysql.com/downloads/installer/
+Git : https://git-scm.com/download/win
+VSCode : https://code.visualstudio.com/
+Postman : https://www.postman.com/downloads/
+WSL : Windows Terminal ->  wsl --install
+```
+
+######################################################
+# 맥 개발 환경 설정
+```
+# macOS 전체 설치 요약
+brew install node python@3.11 mysql git
+brew services start mysql
+
+# 프로젝트 디렉토리 생성
+mkdir project-root && cd project-root
+mkdir backend-flask socket-server mysql
+
+# Flask 세팅
+cd backend-flask
+python3 -m venv venv
+source venv/bin/activate
+pip install flask flask-cors flask-sqlalchemy pymysql python-dotenv
+
+# Node.js 세팅
+cd ../socket-server
+npm init -y
+npm install express socket.io mysql dotenv
+```
 
 
